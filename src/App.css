@@ -124,7 +124,7 @@ body {
   text-shadow: var(--format-shadow);
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   :root{
     --text-shadow-color: rgb(27, 27, 226);
   }
