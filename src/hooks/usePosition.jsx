@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import useApi from './useApi'
 
 const usePosition = () => {
     const [lat, setLat] = useState(null)
@@ -16,7 +15,6 @@ const usePosition = () => {
     }, [])
 
     return {lat, lon}
-
 }
 
 export default usePosition;

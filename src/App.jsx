@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import axios from 'axios'
 import TitleComp from './components/TitleComp'
 import BodyComp from './components/BodyComp'
 import useApi from './hooks/useApi'
 import usePosition from './hooks/usePosition'
+import LoadingScreen from './components/LoadingScreen'
 
 
 
@@ -24,6 +23,7 @@ function App() {
 
   return (
     <>
+      <LoadingScreen />
       <div className='weather-container'>
         <TitleComp city={city} country={country} weatherDescription={weatherDescription} />
         <BodyComp temp={temp} wind={wind} humidity={humidity}

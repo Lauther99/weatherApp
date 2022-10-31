@@ -1,0 +1,48 @@
+.loading-container {
+    z-index: 100;
+    background-color: transparent;;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    transition: all 1s ease;
+}
+
+.loading-circle {
+    border: 15px solid #ccc;
+    border-top-color: green;
+    border-top-style: groove;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    animation: movement 1.5s linear infinite;
+
+}
+
+.loading-container h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+@keyframes movement {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}

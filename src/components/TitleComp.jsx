@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const TitleComp = ({ city, country, weatherDescription }) => {
     let letters = (city + country).length
-
     if (isNaN(letters)) letters = 0
 
-    const style = {
-        width: `${letters + 2}ch`,
-        animation: `typing 2s steps(${letters}),
+    const [styles, setStyles] = useState({ width: `${letters + 2}ch` })
+
+    const myTimeout = setTimeout(() => {
+        setStyles({
+            width: `${letters + 2}ch`,
+            animation: `typing 2s steps(${letters}),
             blink .5s infinite step-end alternate`,
-        textShadow: `var(--format-shadow)`
-    }
+            textShadow: `var(--format-shadow)`
+        })
+    }, 2500);
 
     return (
         <div className='title'>
             <h2>Right now in: </h2>
-            <div style={style}>{city}, {country}</div>
+            <div style={styles}>{city}, {country}</div>
             <h3> it's {weatherDescription}</h3>
         </div>
     );
