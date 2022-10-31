@@ -22,19 +22,13 @@ function App() {
   const humidity = data.main?.humidity
   const iconId = data.weather?.[0].icon
 
-
-  console.log(data)
-
-
   return (
     <>
       <div className='weather-container'>
         <TitleComp city={city} country={country} weatherDescription={weatherDescription} />
         <BodyComp temp={temp} wind={wind} humidity={humidity}
           iconId={iconId} maxTemp={maxTemp} minTemp={minTemp} />
-        
       </div>
-      
     </>
   )
 }
