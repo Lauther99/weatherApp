@@ -3,7 +3,7 @@ import ButtonTemp from './ButtonTemp'
 
 const BodyComp = ({ temp, wind, humidity, iconId, maxTemp, minTemp }) => {
     const iconUrl = `http://openweathermap.org/img/wn/${iconId}@2x.png`
-    const [isCelsius, setisCelsius] = useState(false)
+    const [isCelsius, setisCelsius] = useState(true)
 
     const kindOfTemp = setKindOfTem()
     function setKindOfTem() {
