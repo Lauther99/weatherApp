@@ -50,18 +50,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 1rem;
 }
 
-.title span {
-  font-size: 25px;
+.title h2{
+  align-self: flex-start;
+  font-size: 30px;
+}
+
+.title div{
+  align-self: center;
+  margin: 1rem 0;
+  font-size: 30px;
   white-space: nowrap;
   border-right: 4px solid;
-  width: 11ch;
-  animation: typing 2s steps(12),
-    blink .5s infinite step-end alternate;
   overflow: hidden;
   font-weight: 600;
   text-shadow: var(--format-shadow);
+}
+
+.title h3{
+  align-self: flex-end;
+  font-size: 25px;
 }
 
 @keyframes typing {
@@ -76,12 +87,6 @@ body {
   }
 }
 
-.weather-container h2 {
-  font-size: 25px;
-  text-align: center;
-  padding: 1rem;
-}
-
 .weather-img {
   width: 200px;
   height: 200px;
@@ -93,11 +98,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  position: relative;
+  bottom: 50px;
 }
 
 .weather-card h2 {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 600;
   text-shadow: var(--format-shadow);
 }
@@ -122,6 +128,23 @@ body {
 .item b {
   font-weight: 600;
   text-shadow: var(--format-shadow);
+}
+
+button{
+  width: 150px;
+  height: 2rem;
+  border-radius: 2px;
+  box-shadow: 0 0 15px 0 white;
+  border: none;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+button:hover{
+  cursor: pointer;
+  box-shadow: 0 0 20px 0 purple;
 }
 
 @media screen and (min-width: 1000px) {
@@ -151,10 +174,13 @@ body {
 
   .title h2{
     justify-self: end;
+    align-self: center;
   }
 
-  .title span{
+  .title div{
     justify-self: start;
+    margin-left: 0.5rem;
+    align-self: center;
   }
 
   .title h3{
@@ -164,13 +190,16 @@ body {
   }
 
   .title h2,
-  .title span, .title h3 {
+  .title div, .title h3 {
     font-size: 40px;
   }
 
   .weather-card {
     flex-direction: row;
     height: 250px;
+    padding: 0 3rem 0 0;
+    margin-top: 1rem;
+    position: relative;
   }
 
   .weather-img{
@@ -179,10 +208,19 @@ body {
   }
 
   .weather-card h2{
-    font-size: 100px;
+    font-size: 80px;
+    margin-right: 1rem;
   }
 
   .item p, .item b{
     font-size: 25px;
   }
+
+  button{
+    margin-top: 0;
+    position: absolute;
+    top: 105%;
+    right: calc(50% - 75px);
+  }
+
 }

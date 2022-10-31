@@ -7,8 +7,8 @@ import useApi from './hooks/useApi'
 import usePosition from './hooks/usePosition'
 
 
+
 function App() {
-  const url = 'http://openweathermap.org/img/w/10d.png'
   const { lat, lon } = usePosition()
   const { data } = useApi({ lat: lat, lon: lon })
 
@@ -24,15 +24,17 @@ function App() {
 
 
   console.log(data)
-  
+
 
   return (
     <>
       <div className='weather-container'>
-        <TitleComp city = {city} country ={country} weatherDescription = {weatherDescription} />
-        <BodyComp temp={temp} wind={wind} humidity={humidity} 
-        iconId={iconId} maxTemp = {maxTemp} minTemp={minTemp} />
+        <TitleComp city={city} country={country} weatherDescription={weatherDescription} />
+        <BodyComp temp={temp} wind={wind} humidity={humidity}
+          iconId={iconId} maxTemp={maxTemp} minTemp={minTemp} />
+        
       </div>
+      
     </>
   )
 }
