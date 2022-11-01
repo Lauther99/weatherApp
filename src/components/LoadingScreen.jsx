@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 
-const LoadingScreen = () => {
-    const [loadingStyle, setloadingStyle] = useState({})
+const LoadingScreen = ({load}) => {
+    let loadingStyle = {}
 
-    const myTimeout = setTimeout(() =>{
-        setloadingStyle({display: `none`,
-        opacity: `0`})
-    }, 3000);
 
+    if (!load) {
+        loadingStyle = {display: `none`,
+        opacity: `0`}
+    }
+
+    
     return (
         <div className='loading-container' style={loadingStyle}>
             <div className='loading-circle'></div>

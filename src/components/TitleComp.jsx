@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const TitleComp = ({ city, country, weatherDescription }) => {
     let letters = (city + country).length
-    if (isNaN(letters)) letters = 0
+    if (isNaN(letters)) letters = 10
 
     const [styles, setStyles] = useState({ width: `${letters + 2}ch` })
 
@@ -13,7 +13,7 @@ const TitleComp = ({ city, country, weatherDescription }) => {
             blink .5s infinite step-end alternate`,
             textShadow: `var(--format-shadow)`
         })
-    }, 2500);
+    }, 0);
 
     return (
         <div className='title'>

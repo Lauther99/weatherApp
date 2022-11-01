@@ -9,7 +9,7 @@ import LoadingScreen from './components/LoadingScreen'
 
 function App() {
   const { lat, lon } = usePosition()
-  const { data } = useApi({ lat: lat, lon: lon })
+  const { data, load } = useApi({ lat: lat, lon: lon })
 
   const city = data.name
   const country = data.sys?.country
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <LoadingScreen />
+      <LoadingScreen load = {load}/>
       <div className='weather-container'>
         <TitleComp city={city} country={country} weatherDescription={weatherDescription} />
         <BodyComp temp={temp} wind={wind} humidity={humidity}
