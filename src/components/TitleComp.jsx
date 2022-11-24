@@ -13,7 +13,7 @@ const TitleComp = ({ city, country, weatherDescription }) => {
             blink .5s infinite step-end alternate`,
             textShadow: `var(--format-shadow)`
         })
-    }, 0);
+    }, 500);
 
     return (
         <div className='title'>

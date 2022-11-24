@@ -8,6 +8,7 @@ const useApi = ({ lat, lon, load = true}) => {
         if (lat && lon) {
             axios.get(url)
                 .then(res => setData(res.data))
+                .catch(error => console.log(error))
         } 
     }, [lat])
     lat? load = false : load = true

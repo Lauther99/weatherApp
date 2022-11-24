@@ -16,32 +16,29 @@ const BodyComp = ({ temp, wind, humidity, iconId, maxTemp, minTemp }) => {
     }
 
     return (
-        <div className='weather-card'>
-            <img src={iconUrl} alt="" className='weather-img' />
-            <h2>{temp} {kindOfTemp}</h2>
-            <div className='others-container'>
-                <div className="item">
-                    <i className='bx bx-wind bx-sm'></i>
-                    <p><b>{wind} </b>mph</p>
+            <div className='weather-card'>
+                <img src={iconUrl} alt="" className='weather-img' />
+                <h2>{temp} {kindOfTemp}</h2>
+                <div className='others-container'>
+                    <div className="item">
+                        <i className='bx bx-wind bx-sm'></i>
+                        <p><b>{wind} </b>mph</p>
+                    </div>
+                    <div className="item">
+                        <i className="fa-solid fa-droplet fa-xl"></i>
+                        <p><b>{humidity}</b>%</p>
+                    </div>
+                    <div className="item">
+                        <i className="fa-solid fa-temperature-low fa-xl"></i>
+                        <p><b>{maxTemp}</b> {kindOfTemp}</p>
+                    </div>
+                    <div className="item">
+                        <i className="fa-solid fa-temperature-high fa-xl"></i>
+                        <p><b>{minTemp}</b> {kindOfTemp}</p>
+                    </div>
+                    <ButtonTemp isCelsius={isCelsius} setisCelsius={setisCelsius} />
                 </div>
-                <div className="item">
-                    <i className="fa-solid fa-droplet fa-xl"></i>
-                    <p><b>{humidity}</b>%</p>
-                </div>
-                <div className="item">
-                    <i className="fa-solid fa-temperature-low fa-xl"></i>
-                    <p><b>{maxTemp}</b> {kindOfTemp}</p>
-                </div>
-                <div className="item">
-                    <i className="fa-solid fa-temperature-high fa-xl"></i>
-                    <p><b>{minTemp}</b> {kindOfTemp}</p>
-                </div>
-
-                <ButtonTemp isCelsius={isCelsius} setisCelsius={setisCelsius} />
             </div>
-
-        </div>
-
     );
 };
 
